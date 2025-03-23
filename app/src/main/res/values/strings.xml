@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Fetch Hiring Task</string>
+    <string name="list_id">List ID: %1$s</string>
+</resources>
