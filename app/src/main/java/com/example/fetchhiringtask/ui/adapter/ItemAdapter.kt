@@ -13,9 +13,8 @@ sealed class ListItem {
     data class ItemData(val item: Item) : ListItem()
 }
 
-class ItemAdapter(items: List<Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val groupedItems: List<ListItem> = groupItemsByListId(items)
+class ItemAdapter(private val groupedItems: List<ListItem>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         private const val VIEW_TYPE_HEADER = 0
@@ -62,26 +61,5 @@ class ItemAdapter(items: List<Item>) : RecyclerView.Adapter<RecyclerView.ViewHol
         fun bind(item: Item) {
             nameTextView.text = item.name
         }
-    }
-
-    private fun groupItemsByListId(items: List<Item>): List<ListItem> {
-        val groupedList = mutableListOf<ListItem>()
-        val groupedMap = items
-            .filter { !it.name.isNullOrBlank() }
-            .groupBy { it.listId }
-            .toSortedMap()
-
-        groupedMap.forEach { (listId, itemList) ->
-            groupedList.add(ListItem.Header(listId))
-            itemList
-                .sortedBy { extractItemNumber(it.name) }
-                .forEach { groupedList.add(ListItem.ItemData(it)) }
-        }
-
-        return groupedList
-    }
-
-    private fun extractItemNumber(name: String?): Int {
-        return name?.substringAfter("Item ")?.toIntOrNull() ?: Int.MAX_VALUE
     }
 }

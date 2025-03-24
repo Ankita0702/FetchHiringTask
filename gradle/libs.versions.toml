@@ -8,20 +8,30 @@ retrofit = "2.9.0"
 kotlinCoroutines = "1.7.1"
 coreCoroutines = "1.7.1"
 junit = "4.13.2"
+coroutineTest = "1.7.1"
+coreTest = "2.2.0"
+mockitoCore = "5.11.0"
+mockitoKotlin = "4.1.0"
 androidxJunit = "1.1.5"
 espresso = "3.5.1"
+activityKtx = "1.6.1"
+
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
 core-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coreCoroutines" }
 junit = { module = "junit:junit", version.ref = "junit" }
+core-test = { module = "androidx.arch.core:core-testing", version.ref = "coreTest" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutineTest" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
